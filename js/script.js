@@ -1,0 +1,1 @@
+document.getElementById('check').style.color = 'yellow';
