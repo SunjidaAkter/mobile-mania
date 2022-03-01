@@ -1,3 +1,55 @@
+/* font-family */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courgette&family=Inter:wght@400;700&family=Manrope:wght@700&family=Poppins:wght@500;600;700&family=Roboto:wght@700&display=swap');
+
+
+
+/* background-color */
+.bg{
+    background-color: rgb(241, 241, 185);
+}
+
+/* spinner */
 #spinner {
     display: none;
+}
+
+
+/* font-styling */
+.font{
+    font-size: 24px;
+}
+.text-h1{
+    font-family: 'Courgette', cursive;
+    color: rgb(33, 48, 33);
+    font-size: 48px;
+}
+
+.text-h3{
+    font-family: 'Inter', sans-serif;
+    color: rgb(12, 22, 12);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* horizontal-line-styling */
+hr{
+    width: 70%;
+}
+
+
+/* warning-massage-styling */
+.warning{
+    color: red;
+    text-align: center;
+    width: 80%;
+
+}
+
+/* mobile-responsive */
+@media only screen and ( max-width:688px ) {
+    .font{
+        font-size: 12px;
+        /* text-align: center; */
+        box-sizing: border-box;
+    }
 }

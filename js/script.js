@@ -1,28 +1,35 @@
+// error-handling
 const errorHandling = text => {
     spinnerToggler('none');
     document.getElementById('search-result').textContent = '';
     const h2 = document.createElement('h2');
+    h2.classList.add('warning');
     h2.innerText = text;
     document.getElementById('search-result').appendChild(h2);
     document.getElementById('phone-details').textContent = '';
 }
 
+
+// spinner
 const spinnerToggler = display => {
     document.getElementById('spinner').style.display = display;
 }
 const infoToggler = display => {
     document.getElementById('search-result').style.display = display;
+    document.getElementById('phone-details').style.display = display;
 }
-const searchFood = async () => {
+
+
+// searching
+const searchPhone = async () => {
     const searchField = document.getElementById('search-field');
     searchText = searchField.value;
     searchField.value = '';
     spinnerToggler('block');
-    // errorHandling('');
     infoToggler('none');
     if (searchText == '') {
         infoToggler('block');
-        errorHandling('please enter valid input');
+        errorHandling('Please Enter Valid Input');
         spinnerToggler('none');
     }
     else {
@@ -34,29 +41,32 @@ const searchFood = async () => {
 
     }
 }
+
+// displaying-resul
 const displaySearchResult = (phones) => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
     console.log(phones);
     if (phones.length == 0) {
-        errorHandling('not found');
+        errorHandling('No phones found, search again!');
         infoToggler('block');
         spinnerToggler('none');
     }
     else {
         phones.forEach(phone => {
-            console.log(phone);
+            // console.log(phone);
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
             <div class="card ">
+                
                 <div class="d-flex justify-content-center">
                     <img style="width: 250px;"  src="${phone.image}" class="card-img-top my-2" alt="...">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Name : ${phone.phone_name}</h5>
                     <h5 class="card-text">Brand : ${phone.brand}</h5>
-                    <button onclick="loadPhoneDetail('${phone.slug}')" type="button" class="btn btn-success">Success</button>
+                    <button onclick="loadPhoneDetail('${phone.slug}')" type="button" class="btn btn-success">EXPLORE</button>
                 </div>
             </div>
             `;
@@ -67,19 +77,25 @@ const displaySearchResult = (phones) => {
         // errorHandling('');
     }
 }
+
+
+//loading-detail
 const loadPhoneDetail = async id => {
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     const res = await fetch(url);
     const data = await res.json();
     displayPhoneDetail(data.data);
 }
+
+// displaying-phoneDetail
 const displayPhoneDetail = phone => {
     const phoneDetail = document.getElementById('phone-details');
     phoneDetail.textContent = '';
     const div = document.createElement('div');
     div.classList.add('card')
     div.innerHTML = `
-    <div class="d-flex flex-wrap  ">
+    <div class="d-flex flex-column font ">
+            <h1 class="card-title text-center my-2">Phone Details</h1>
                 <div class="d-flex justify-content-center ">
                     <img style="width: 300px;" src="${phone.image}" class="card-img-top  p-5" alt="...">
                 </div>
@@ -103,7 +119,6 @@ const displayPhoneDetail = phone => {
                     <p class="card-text">Radio: ${phone.others?.Radio ? phone.others.Radio : 'Not Available'}</p>
                     <p class="card-text">USB: ${phone.others?.USB ? phone.others.USB : 'Not Available'}</p>
                     <p class="card-text">WLAN: ${phone.others?.WLAN ? phone.others.WLAN : 'Not Available'}</p>
-                    
                 </div>
             </div>
     `;

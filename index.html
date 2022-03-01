@@ -17,40 +17,43 @@
 
 <body>
 
-    <!-- heading part -->
-    <header class="container my-5 ">
-        <section class=" d-flex flex-column justify-content-center align-items-center">
-            <!-- head line  -->
-            <h1 class="text-success text-center my-2">Mobile Mania</h1>
-            <!-- input field -->
-            <div class="input-group my-3 w-50">
-                <input id="search-field" type="text" class="form-control" placeholder="food search"
-                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button onclick="searchFood()" class="btn btn-outline-secondary" type="button"
-                    id="button-addon2">Button</button>
+    <section class="bg">
+        <!-- heading part -->
+        <header class="container my-5 ">
+            <section class=" d-flex flex-column justify-content-center align-items-center">
+                <!-- head line  -->
+                <p class="text-h1 text-center my-2">Phone Features</p>
+                <!-- input field -->
+                <p class="text-h3  text-center my-2">Search For Phone Related information</p>
+                <div class="input-group my-3 w-70">
+                    <input id="search-field" type="text" class="form-control" placeholder="Search Phone"
+                        aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button onclick="searchPhone()" class="btn btn-outline-secondary" type="button"
+                        id="button-addon2">Button</button>
+                </div>
+            </section>
+        </header>
+
+        <!-- main part -->
+        <main class="container my-3">
+
+            <!-- single phone detail -->
+            <div id="phone-details" class=" mx-auto my-5 d-flex justify-content-center">
             </div>
-        </section>
-    </header>
 
-    <!-- main part -->
-    <main class="container my-3">
+            <!-- search result -->
+            <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4"></div>
 
-        <!-- single phone detail -->
-        <div id="phone-details" class="w-50 mx-auto my-5">
-        </div>
-
-        <!-- search result -->
-        <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4"></div>
-
-        <!-- spinner -->
-        <div class="d-flex justify-content-center my-5             ">
-            <div id="spinner" class="spinner-border text-success    " role="status">
-                <span class="visually-hidden">Loading...</span>
+            <!-- spinner -->
+            <div class="d-flex justify-content-center my-5 ">
+                <div id="spinner" class="spinner-border text-success " role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
-        </div>
 
-    </main>
+        </main>
 
+    </section>
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
