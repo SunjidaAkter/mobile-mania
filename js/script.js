@@ -112,7 +112,7 @@ const displayPhoneDetail = phone => {
                     <h3 class="card-title">Name : ${phone.name ? phone.name : 'Not Available'}</h3>
                     <p class="card-text"><b>Brand :</b> ${phone.brand ? phone.brand : 'Not Available'}</p>
                     <p class="card-text"><b>Code :</b> ${phone.slug}</p>
-                    <p class="card-text"><b>Release Date :</b> ${phone.releaseDate ? phone.releaseDate : 'Released Date is not available'}</p>
+                    <p class="card-text"><b>Release Date :</b> ${phone.releaseDate ? phone.releaseDate : 'Release Date is not available'}</p>
                     <hr>
                     <h3>Main Features</h3>
                     <p class="card-text"><b>Chipset :</b> ${phone.mainFeatures?.chipSet ? phone.mainFeatures.chipSet : 'Not Available'}</p>
