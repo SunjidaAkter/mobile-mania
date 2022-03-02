@@ -121,7 +121,7 @@ const displayPhoneDetail = phone => {
                     <p class="card-text"><b>Sensors :</b> ${phone.mainFeatures?.sensors ? phone.mainFeatures.sensors : 'Not Available'}</p>
                     <p class="card-text"><b>Storage :</b> ${phone.mainFeatures?.storage ? phone.mainFeatures.storage : 'Not Available'}</p>
                     <hr>
-                    <h3>Others Features</h3>
+                    <h3>Other Features</h3>
                     <p class="card-text"><b>Bluetooth :</b> ${phone.others?.Bluetooth ? phone.others.Bluetooth : 'Not Available'}</p>
                     <p class="card-text"><b>GPS :</b> ${phone.others?.GPS ? phone.others.GPS : 'Not Available'}</p>
                     <p class="card-text"><b>NFC :</b> ${phone.others?.NFC ? phone.others.NFC : 'Not Available'}</p>
