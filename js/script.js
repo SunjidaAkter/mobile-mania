@@ -104,7 +104,7 @@ const displayPhoneDetail = phone => {
     div.classList.add('card')
     div.innerHTML = `
     <div class="d-flex flex-column font ">
-            <h1 class="card-title text-center my-2">Phone Details</h1>
+            <h1 class="card-title text-center my-2">Product Details</h1>
                 <div class="d-flex justify-content-center ">
                     <img style="width: 300px;" src="${phone.image ? phone.image : 'Image not found'}" class="card-img-top  p-5" alt="...">
                 </div>
