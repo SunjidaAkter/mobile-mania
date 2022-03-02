@@ -75,7 +75,7 @@ const displaySearchResult = (phones) => {
                 <div class="card-body">
                     <h5 class="card-title">Name : ${phone.phone_name ? phone.phone_name : 'Not Available'}</h5>
                     <h5 class="card-text">Brand : ${phone.brand ? phone.brand : 'Not Available'}</h5>
-                    <button  type="button" class="btn btn-success"><a class="link" onclick="loadPhoneDetail('${phone.slug}')" href="#">EXPLORE</a></button>
+                    <a class="link" href="#"><button onclick="loadPhoneDetail('${phone.slug}')" type="button" class="btn btn-success">EXPLORE</button></a>
                 </div>
             </div>
             `;
