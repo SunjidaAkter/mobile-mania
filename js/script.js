@@ -70,11 +70,11 @@ const displaySearchResult = (phones) => {
             <div class="card ">
                 
                 <div class="d-flex justify-content-center">
-                    <img style="width: 250px;"  src="${phone.image}" class="card-img-top my-2" alt="...">
+                    <img style="width: 250px;"  src="${phone.image ? phone.image : 'Image not found'}" class="card-img-top my-2" alt="...">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Name : ${phone.phone_name}</h5>
-                    <h5 class="card-text">Brand : ${phone.brand}</h5>
+                    <h5 class="card-title">Name : ${phone.phone_name ? phone.phone_name : 'Not Available'}</h5>
+                    <h5 class="card-text">Brand : ${phone.brand ? phone.brand : 'Not Available'}</h5>
                     <button onclick="loadPhoneDetail('${phone.slug}')" type="button" class="btn btn-success">EXPLORE</button>
                 </div>
             </div>
@@ -106,22 +106,22 @@ const displayPhoneDetail = phone => {
     <div class="d-flex flex-column font ">
             <h1 class="card-title text-center my-2">Phone Details</h1>
                 <div class="d-flex justify-content-center ">
-                    <img style="width: 300px;" src="${phone.image}" class="card-img-top  p-5" alt="...">
+                    <img style="width: 300px;" src="${phone.image ? phone.image : 'Image not found'}" class="card-img-top  p-5" alt="...">
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Name: ${phone.name}</h5>
-                    <p class="card-text">Brand: ${phone.brand}</p>
+                    <h3 class="card-title">Name: ${phone.name ? phone.name : 'Not Available'}</h3>
+                    <p class="card-text">Brand: ${phone.brand ? phone.brand : 'Not Available'}</p>
                     <p class="card-text">Code: ${phone.slug}</p>
                     <p class="card-text">${phone.releaseDate ? phone.releaseDate : 'Released Date is not available'}</p>
                     <hr>
-                    <h5>Main Features</h5>
+                    <h3>Main Features</h3>
                     <p class="card-text">Chipset: ${phone.mainFeatures?.chipSet ? phone.mainFeatures.chipSet : 'Not Available'}</p>
                     <p class="card-text">Display Size: ${phone.mainFeatures?.displaySize ? phone.mainFeatures.displaySize : 'Not Available'}</p>
                     <p class="card-text">Memory: ${phone.mainFeatures?.memory ? phone.mainFeatures.memory : 'Not Available'}</p>
                     <p class="card-text">Sensors: ${phone.mainFeatures?.sensors ? phone.mainFeatures.sensors : 'Not Available'}</p>
                     <p class="card-text">Storage: ${phone.mainFeatures?.storage ? phone.mainFeatures.storage : 'Not Available'}</p>
                     <hr>
-                    <h5>Others Features</h5>
+                    <h3>Others Features</h3>
                     <p class="card-text">Bluetooth: ${phone.others?.Bluetooth ? phone.others.Bluetooth : 'Not Available'}</p>
                     <p class="card-text">GPS: ${phone.others?.GPS ? phone.others.GPS : 'Not Available'}</p>
                     <p class="card-text">NFC: ${phone.others?.NFC ? phone.others.NFC : 'Not Available'}</p>
