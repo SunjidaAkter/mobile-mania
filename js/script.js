@@ -128,7 +128,7 @@ const displayPhoneDetail = phone => {
                     <p class="card-text"><b>Radio :</b> ${phone.others?.Radio ? phone.others.Radio : 'Not Available'}</p>
                     <p class="card-text"><b>USB :</b> ${phone.others?.USB ? phone.others.USB : 'Not Available'}</p>
                     <p class="card-text"><b>WLAN :</b> ${phone.others?.WLAN ? phone.others.WLAN : 'Not Available'}</p>
-                    <button id="close" type="button" class="btn btn-success">CLOSE</button>
+                    <a class="link" href="#"><button id="close" type="button" class="btn btn-success">CLOSE</button></a>
                 </div>
             </div>
     `;
