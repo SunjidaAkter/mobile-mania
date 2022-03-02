@@ -109,25 +109,25 @@ const displayPhoneDetail = phone => {
                     <img style="width: 300px;" src="${phone.image ? phone.image : 'Image not found'}" class="card-img-top  p-5" alt="...">
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Name: ${phone.name ? phone.name : 'Not Available'}</h3>
-                    <p class="card-text">Brand: ${phone.brand ? phone.brand : 'Not Available'}</p>
-                    <p class="card-text">Code: ${phone.slug}</p>
-                    <p class="card-text">${phone.releaseDate ? phone.releaseDate : 'Released Date is not available'}</p>
+                    <h3 class="card-title">Name : ${phone.name ? phone.name : 'Not Available'}</h3>
+                    <p class="card-text"><b>Brand :</b> ${phone.brand ? phone.brand : 'Not Available'}</p>
+                    <p class="card-text"><b>Code :</b> ${phone.slug}</p>
+                    <p class="card-text"><b>Release Date :</b> ${phone.releaseDate ? phone.releaseDate : 'Released Date is not available'}</p>
                     <hr>
                     <h3>Main Features</h3>
-                    <p class="card-text">Chipset: ${phone.mainFeatures?.chipSet ? phone.mainFeatures.chipSet : 'Not Available'}</p>
-                    <p class="card-text">Display Size: ${phone.mainFeatures?.displaySize ? phone.mainFeatures.displaySize : 'Not Available'}</p>
-                    <p class="card-text">Memory: ${phone.mainFeatures?.memory ? phone.mainFeatures.memory : 'Not Available'}</p>
-                    <p class="card-text">Sensors: ${phone.mainFeatures?.sensors ? phone.mainFeatures.sensors : 'Not Available'}</p>
-                    <p class="card-text">Storage: ${phone.mainFeatures?.storage ? phone.mainFeatures.storage : 'Not Available'}</p>
+                    <p class="card-text"><b>Chipset :</b> ${phone.mainFeatures?.chipSet ? phone.mainFeatures.chipSet : 'Not Available'}</p>
+                    <p class="card-text"><b>Display Size :</b> ${phone.mainFeatures?.displaySize ? phone.mainFeatures.displaySize : 'Not Available'}</p>
+                    <p class="card-text"><b>Memory :</b> ${phone.mainFeatures?.memory ? phone.mainFeatures.memory : 'Not Available'}</p>
+                    <p class="card-text"><b>Sensors :</b> ${phone.mainFeatures?.sensors ? phone.mainFeatures.sensors : 'Not Available'}</p>
+                    <p class="card-text"><b>Storage :</b> ${phone.mainFeatures?.storage ? phone.mainFeatures.storage : 'Not Available'}</p>
                     <hr>
                     <h3>Others Features</h3>
-                    <p class="card-text">Bluetooth: ${phone.others?.Bluetooth ? phone.others.Bluetooth : 'Not Available'}</p>
-                    <p class="card-text">GPS: ${phone.others?.GPS ? phone.others.GPS : 'Not Available'}</p>
-                    <p class="card-text">NFC: ${phone.others?.NFC ? phone.others.NFC : 'Not Available'}</p>
-                    <p class="card-text">Radio: ${phone.others?.Radio ? phone.others.Radio : 'Not Available'}</p>
-                    <p class="card-text">USB: ${phone.others?.USB ? phone.others.USB : 'Not Available'}</p>
-                    <p class="card-text">WLAN: ${phone.others?.WLAN ? phone.others.WLAN : 'Not Available'}</p>
+                    <p class="card-text"><b>Bluetooth :</b> ${phone.others?.Bluetooth ? phone.others.Bluetooth : 'Not Available'}</p>
+                    <p class="card-text"><b>GPS :</b> ${phone.others?.GPS ? phone.others.GPS : 'Not Available'}</p>
+                    <p class="card-text"><b>NFC :</b> ${phone.others?.NFC ? phone.others.NFC : 'Not Available'}</p>
+                    <p class="card-text"><b>Radio :</b> ${phone.others?.Radio ? phone.others.Radio : 'Not Available'}</p>
+                    <p class="card-text"><b>USB :</b> ${phone.others?.USB ? phone.others.USB : 'Not Available'}</p>
+                    <p class="card-text"><b>WLAN :</b> ${phone.others?.WLAN ? phone.others.WLAN : 'Not Available'}</p>
                     <button id="close" type="button" class="btn btn-success">CLOSE</button>
                 </div>
             </div>

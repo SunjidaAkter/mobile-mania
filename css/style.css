@@ -13,21 +13,29 @@
     text-decoration: none;
     color: white;
 }
+.link:hover{
+    color: white;
+}
+
 /* spinner */
 #spinner {
     display: none;
 }
 
+/* card-styling */
+.card-body{
+    padding: 1rem 3rem 2rem;
+}
+
 /* font-styling */
 .font{
-    font-size: 24px;
+    font-size: 16px;
 }
 .text-h1{
     font-family: 'Courgette', cursive;
     color: rgb(33, 48, 33);
     font-size: 48px;
 }
-
 .text-h3{
     font-family: 'Inter', sans-serif;
     color: rgb(12, 22, 12);
@@ -39,7 +47,6 @@
 hr{
     width: 70%;
 }
-
 
 /* warning-massage-styling */
 .warning{
