@@ -83,7 +83,6 @@ const displaySearchResult = (phones) => {
         });
         spinnerToggler('none');
         infoToggler('inline-flex');
-        // errorHandling('');
     }
 }
 
@@ -135,7 +134,7 @@ const displayPhoneDetail = phone => {
     `;
     phoneDetail.appendChild(div);
 }
-// function close() { console.log('clicked'); }
+//closing-function
 document.addEventListener("click", function (e) {
     if (e.target.id == 'close') {
         const phoneDetail = document.getElementById('phone-details');
