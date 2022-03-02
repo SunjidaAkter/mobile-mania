@@ -41,11 +41,11 @@ hr{
     color: red;
     text-align: center;
     padding: 5px;
+    background-color: rgb(255, 255, 255);
 }
 .warning-div{
     display: flex;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
 }
 
 /* mobile-responsive */

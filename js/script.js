@@ -27,7 +27,7 @@ const infoToggler = display => {
 // searching
 const searchPhone = async () => {
     const searchField = document.getElementById('search-field');
-    searchText = toLowerCase(searchField.value);
+    searchText = searchField.value;
     searchField.value = '';
     document.getElementById('phone-details').textContent = '';
     spinnerToggler('block');
@@ -51,7 +51,7 @@ const searchPhone = async () => {
     }
 }
 
-// displaying-resul
+// displaying-result
 const displaySearchResult = (phones) => {
     const searchResult = document.getElementById('search-result');
     searchResult.textContent = '';
