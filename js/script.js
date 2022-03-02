@@ -99,7 +99,7 @@ const loadPhoneDetail = async id => {
 const displayPhoneDetail = phone => {
     const phoneDetail = document.getElementById('phone-details');
     phoneDetail.textContent = '';
-    document.getElementById('search-result').style.display = 'none';
+    // document.getElementById('search-result').style.display = 'none';
     const div = document.createElement('div');
     div.classList.add('card')
     div.innerHTML = `
@@ -139,6 +139,6 @@ document.addEventListener("click", function (e) {
     if (e.target.id == 'close') {
         const phoneDetail = document.getElementById('phone-details');
         phoneDetail.textContent = '';
-        document.getElementById('search-result').style.display = 'inline-flex';
+        // document.getElementById('search-result').style.display = 'inline-flex';
     }
 })
