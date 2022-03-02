@@ -2,11 +2,15 @@
 const errorHandling = text => {
     spinnerToggler('none');
     document.getElementById('search-result').textContent = '';
+    const div = document.createElement('div');
+    div.classList.add('warning-div');
     const h2 = document.createElement('h2');
     h2.classList.add('warning');
     h2.innerText = text;
-    document.getElementById('search-result').appendChild(h2);
+    div.appendChild(h2);
     document.getElementById('phone-details').textContent = '';
+    document.getElementById('phone-details').appendChild(div);
+    document.getElementById('search-result').textContent = '';
 }
 
 
@@ -25,6 +29,7 @@ const searchPhone = async () => {
     const searchField = document.getElementById('search-field');
     searchText = searchField.value;
     searchField.value = '';
+    document.getElementById('phone-details').textContent = '';
     spinnerToggler('block');
     infoToggler('none');
     if (searchText == '') {
@@ -91,6 +96,7 @@ const loadPhoneDetail = async id => {
 const displayPhoneDetail = phone => {
     const phoneDetail = document.getElementById('phone-details');
     phoneDetail.textContent = '';
+    document.getElementById('search-result').style.display = 'none';
     const div = document.createElement('div');
     div.classList.add('card')
     div.innerHTML = `
@@ -119,8 +125,17 @@ const displayPhoneDetail = phone => {
                     <p class="card-text">Radio: ${phone.others?.Radio ? phone.others.Radio : 'Not Available'}</p>
                     <p class="card-text">USB: ${phone.others?.USB ? phone.others.USB : 'Not Available'}</p>
                     <p class="card-text">WLAN: ${phone.others?.WLAN ? phone.others.WLAN : 'Not Available'}</p>
+                    <button id="close" type="button" class="btn btn-success">CLOSE</button>
                 </div>
             </div>
     `;
     phoneDetail.appendChild(div);
 }
+// function close() { console.log('clicked'); }
+document.addEventListener("click", function (e) {
+    if (e.target.id == 'close') {
+        const phoneDetail = document.getElementById('phone-details');
+        phoneDetail.textContent = '';
+        document.getElementById('search-result').style.display = 'inline-flex';
+    }
+})

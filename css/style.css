@@ -40,8 +40,12 @@ hr{
 .warning{
     color: red;
     text-align: center;
-    width: 80%;
-
+    padding: 5px;
+}
+.warning-div{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
 }
 
 /* mobile-responsive */
