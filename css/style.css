@@ -8,6 +8,11 @@
     background-color: rgb(241, 241, 185);
 }
 
+/* link-decoration */
+.link{
+    text-decoration: none;
+    color: white;
+}
 /* spinner */
 #spinner {
     display: none;
