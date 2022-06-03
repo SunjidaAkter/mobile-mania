@@ -26,7 +26,7 @@
                 <!-- head line  -->
                 <p class="text-h1 text-center my-2">Phone Features</p>
                 <!-- input field -->
-                <p id="top" class="text-h3  text-center my-1">Search For Phone Related Information</p>
+                <p id="top" class="text-h3  text-center my-1">Search For Phone Related Informations</p>
                 <div class="input-group my-3 w-70">
                     <input id="search-field" type="text" class="form-control" placeholder="Search Phone"
                         aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -40,11 +40,21 @@
         <main class="container my-3">
 
             <!-- single phone detail -->
-            <div id="phone-details" class="my-5 d-flex justify-content-center">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div id="phone-details" class="my-5 d-flex justify-content-center">
+                    </div>
+                </div>
             </div>
+
 
             <!-- search result -->
             <div id="search-result" class="row row-cols-1 row-cols-md-3 g-5 mx-0"></div>
+
+            <!-- error-handling -->
+            <div id="error-handling" class="my-5 d-flex justify-content-center">
+            </div>
 
             <!-- spinner -->
             <div class="d-flex justify-content-center my-5 ">

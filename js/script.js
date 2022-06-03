@@ -8,8 +8,9 @@ const errorHandling = text => {
     h2.classList.add('warning');
     h2.innerText = text;
     div.appendChild(h2);
-    document.getElementById('phone-details').textContent = '';
-    document.getElementById('phone-details').appendChild(div);
+    document.getElementById('error-handling').textContent = '';
+    document.getElementById('error-handling').appendChild(div);
+    // document.body.appendChild(div);
     document.getElementById('search-result').textContent = '';
 }
 
@@ -20,25 +21,26 @@ const spinnerToggler = display => {
 }
 const infoToggler = display => {
     document.getElementById('search-result').style.display = display;
-    document.getElementById('phone-details').style.display = display;
+    // document.getElementById('error-handling').style.display = display;
 }
 
 
 // searching
 const searchPhone = async () => {
     const searchField = document.getElementById('search-field');
-    searchText = searchField.value;
+    const searchText = searchField.value;
     searchField.value = '';
     document.getElementById('phone-details').textContent = '';
     spinnerToggler('block');
     infoToggler('none');
+    document.getElementById('error-handling').textContent = '';
     if (searchText == '') {
         infoToggler('block');
         errorHandling('Please Enter Valid Input');
         spinnerToggler('none');
     }
     else {
-        const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`;
+        const url = `https://openapi.programming-hero.com/api/phones?search=${searchText.toLowerCase()}`;
         try {
             const res = await fetch(url);
             const data = await res.json();
@@ -54,6 +56,7 @@ const searchPhone = async () => {
 // displaying-result
 const displaySearchResult = (phones) => {
     const searchResult = document.getElementById('search-result');
+    // errorHandling('');
     searchResult.textContent = '';
     console.log(phones);
     if (phones.length == 0) {
@@ -70,19 +73,21 @@ const displaySearchResult = (phones) => {
             <div class="card ">
                 
                 <div class="d-flex justify-content-center">
-                    <img style="width: 250px;"  src="${phone.image ? phone.image : 'Image not found'}" class="card-img-top my-2" alt="...">
+                    <img style="width: 150px;"  src="${phone.image ? phone.image : 'Image not found'}" class="card-img-top my-2" alt="...">
                 </div>
                 <div class="card-body">
+                <div class="d-flex flex-column justify-content-center align-items-center">
                     <h5 class="card-title">Name : ${phone.phone_name ? phone.phone_name : 'Not Available'}</h5>
                     <h5 class="card-text">Brand : ${phone.brand ? phone.brand : 'Not Available'}</h5>
-                    <a class="link" href="#"><button onclick="loadPhoneDetail('${phone.slug}')" type="button" class="btn btn-success">EXPLORE</button></a>
+                    <a class="link" href="#"><button onclick="loadPhoneDetail('${phone.slug}')" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">EXPLORE</button></a>
                 </div>
-            </div>
-            `;
+                </div>
+                `;
             searchResult.appendChild(div);
         });
         spinnerToggler('none');
         infoToggler('inline-flex');
+        document.getElementById('error-handling').textContent = '';
     }
 }
 
@@ -103,8 +108,12 @@ const displayPhoneDetail = phone => {
     const div = document.createElement('div');
     div.classList.add('card')
     div.innerHTML = `
+    <div class="modal-content">
+    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
     <div class="d-flex flex-column font ">
-            <h1 class="card-title text-center my-2">Product Details</h1>
                 <div class="d-flex justify-content-center ">
                     <img style="width: 300px;" src="${phone.image ? phone.image : 'Image not found'}" class="card-img-top  p-5" alt="...">
                 </div>
@@ -130,6 +139,7 @@ const displayPhoneDetail = phone => {
                     <p class="card-text"><b>WLAN :</b> ${phone.others?.WLAN ? phone.others.WLAN : 'Not Available'}</p>
                     <a class="link" href="#"><button id="close" type="button" class="btn btn-success">CLOSE</button></a>
                 </div>
+            </div>
             </div>
     `;
     phoneDetail.appendChild(div);
